@@ -1,0 +1,79 @@
+﻿@model AddProductViewModel
+@inject ICategoryService categoryService
+@inject IBrandService brandService
+
+@{
+    ViewData["Title"] = "Admin Add New Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<CategoryDto> categories = categoryService.GetAllActiveAsync().Result;
+    List<BrandDto> brands = brandService.GetAllAsync().Result;
+}
+
+<div class="col-md-6 mt-2 mb-3">
+    <div class="cart-title mt-50">
+        <h2>Add Product</h2>
+        <div class="amado-btn-group">
+            <a class="btn amado-btn d-inline" asp-action="Add" asp-controller="Brand" target="_blank">Add Brand</a> |
+            <a class="btn amado-btn d-inline" asp-action="Add" asp-controller="Category" target="_blank">Add Category</a>
+        </div>
+    </div>
+    <form asp-area="Admin" asp-action="Add" asp-controller="Product" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div asp-validation-summary="All" class="col-12 mb-3 text-danger">
+
+            </div>
+            <div class="col-12 mb-3">
+                <input asp-for="ProductName" type="text" class="form-control" id="productName" placeholder="Product Name" value="" required>
+            </div>
+            <div class="col-12 mb-3">
+                <input asp-for="ProductCode" type="text" class="form-control" id="productCode" placeholder="Product Code" value="" required>
+            </div>
+            <div class="col-12 mb-3">
+                <input asp-for="Price" type="number" class="form-control" id="productPrice" placeholder="Price" value="" required>
+            </div>
+            <div class="col-12 mb-3 form-group row">
+                <label class="col-form-label col-sm-2 w-100" for="categoryId">Category</label>
+                <select class="w-100 col-sm-10 float-right" id="categoryId" asp-for="CategoryId">
+                    @if (categories != null)
+                    {
+                        foreach (var category in categories)
+                        {
+                            <option value="@category.Id">@category.CategoryName</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="col-12 mb-3 form-group row">
+                <label class="col-form-label col-sm-2 w-100" for="brandId">Brand</label>
+                <select class="w-100 col-sm-10 float-right" id="brandId" asp-for="BrandId">
+                    @if (brands != null)
+                    {
+                        foreach (var brand in brands)
+                        {
+                            <option value="@brand.Id">@brand.BrandName</option>
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="col-12 mb-3">
+                <div class="custom-control custom-checkbox d-block mb-2">
+                    <input asp-for="StockShortage" type="checkbox" class="custom-control-input" id="customCheckforStock">
+                    <label class="custom-control-label" for="customCheckforStock">Is there insufficient stock?</label>
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <input asp-for="UnitInfo" type="text" class="form-control" id="unitInfo" placeholder="Unit" value="" required>
+            </div>
+            <div class="col-12 mb-3">
+                <textarea asp-for="Description" class="form-control w-100" id="description" cols="20" rows="5" placeholder="Explanation"></textarea>
+            </div>
+            <div class="col-12 mb-3">
+                <input asp-for="Images" type="file" id="inputGroupFile" multiple>
+            </div>
+            <div class="col-12 mb-3">
+                <button type="submit" class="btn amado-btn w-100">Add</button>
+            </div>
+        </div>
+    </form>
+</div>

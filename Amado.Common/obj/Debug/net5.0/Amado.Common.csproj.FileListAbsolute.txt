@@ -1,0 +1,17 @@
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\bin\Debug\net5.0\Amado.Common.deps.json
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\bin\Debug\net5.0\Amado.Common.dll
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\bin\Debug\net5.0\Amado.Common.pdb
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\bin\Debug\net5.0\Amado.Core.dll
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\bin\Debug\net5.0\Amado.DataAccess.dll
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\bin\Debug\net5.0\Amado.DataAccess.pdb
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\bin\Debug\net5.0\Amado.Core.pdb
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\obj\Debug\net5.0\Amado.Common.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\obj\Debug\net5.0\Amado.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\obj\Debug\net5.0\Amado.Common.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\obj\Debug\net5.0\Amado.Common.AssemblyInfo.cs
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\obj\Debug\net5.0\Amado.Common.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\obj\Debug\net5.0\Amado.Common.csproj.CopyComplete
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\obj\Debug\net5.0\Amado.Common.dll
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\obj\Debug\net5.0\refint\Amado.Common.dll
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\obj\Debug\net5.0\Amado.Common.pdb
+C:\Users\user\Desktop\AmadoBackEndProject\Amado.Common\obj\Debug\net5.0\ref\Amado.Common.dll

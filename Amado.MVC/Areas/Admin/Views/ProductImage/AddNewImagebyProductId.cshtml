@@ -1,0 +1,87 @@
+﻿@model List<ProductImageDto>
+@{
+    ViewData["Title"] = "Admin Active Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+        <div class="row">
+            @if (Model != null && Model.Count > 0)
+            {
+                <div class="col-12 col-lg-8">
+                    <div class="cart-title mt-50">
+                        <div class="text-danger">
+                            @if (ViewBag.Error != null)
+                            {
+                                <p class="text-danger">ViewBag.Error</p>
+                            }
+                        </div>
+                        <h2>@Model[0].Product.ProductName Photos</h2>
+                    </div>
+
+                    <div class="cart-table clearfix">
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>URL</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var productImage in Model)
+                                {
+                                    <tr>
+                                        <td class="cart_product_img">
+                                            <img src="@productImage.Url" alt="ProductImage">
+                                        </td>
+                                        <td>
+                                            <span>@productImage.Url</span>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <a class="btn btn-danger" asp-action="RemoveFromDb" asp-route-id="@productImage.Id">Delete Photo</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="text-danger">
+                    No photos found!
+                </div>
+            }
+        </div>
+        @if (Model.Count >= 4)
+        {
+            <div class="text-danger">
+                There are 4 photos of the product, you must delete at least one to add a new photo!
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <form asp-area="Admin" asp-action="AddNewImagebyProductId" asp-controller="ProductImage" method="post" enctype="multipart/form-data">
+                    <div class="text-danger" asp-validation-summary="All">
+
+                    </div>
+                    <div class="col-12 mb-3">
+                        <span>New photos to be added;</span>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <input name="files" type="file" id="inputGroupFile" multiple>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <button type="submit" class="btn amado-btn w-100">Add Photo</button>
+                    </div>
+                </form>
+            </div>
+        }
+    </div>
+</div>

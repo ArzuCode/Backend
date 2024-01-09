@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Admin Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-sm-6">
+    <div class="col-md-12 my-auto">
+        <h1 class="my-2 text-center d-inline">Admin Area</h1>
+    </div>
+    <div class="col-md-12">
+        <div class="col-sm-12 mb-2">
+            <h5>Ürünler</h5>
+            <div class="col-sm-12 amado-btn-group">
+                <a class="btn amado-btn d-inline" asp-action="Add" asp-controller="Product"> Add Product</a> |
+                <a class="btn amado-btn d-inline" asp-action="GetAllActive" asp-controller="Product"> All Active Products </a> |
+                <a class="btn amado-btn d-inline" asp-action="GetAllInActive" asp-controller="Product"> Inactive Products </a>
+            </div>
+        </div>
+        <div class="col-sm-12 mb-2">
+            <h5>Catigories</h5>
+            <div class="col-sm-12 amado-btn-group">
+                <a class="btn amado-btn d-inline" asp-action="Add" asp-controller="Category"> Add Category</a> |
+                <a class="btn amado-btn d-inline" asp-action="GetAllActive" asp-controller="Category"> All Active Categories </a> |
+                <a class="btn amado-btn d-inline" asp-action="GetAllInActive" asp-controller="Category"> Inactive Categories </a>
+            </div>
+        </div>
+        <div class="col-sm-12 mb-2">
+            <h5>Brands</h5>
+            <div class="col-sm-12 amado-btn-group">
+                <a class="btn amado-btn d-inline" asp-action="Add" asp-controller="Brand"> Add Brand</a> |
+                <a class="btn amado-btn d-inline" asp-action="GetAllActive" asp-controller="Brand"> All Active Brands </a> |
+                <a class="btn amado-btn d-inline" asp-action="GetAllInActive" asp-controller="Brand"> Inactive Brands </a>
+            </div>
+        </div>
+    </div>
+</div>
